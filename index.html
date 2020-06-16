@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    </style>
+</head>
+<body>
+  
+  <div class="container">
+    <img src="images/pattern-quotes.svg" alt="" class="quotes" style="z-index: -2;">
+    <img src="images/pattern-bg.svg" alt="" class="pattern-bg" style="z-index: -2;">
+    <img src="images/pattern-curve.svg" alt="" class="pattern-curve" style="z-index: -2;">
+    <div class="inside">
+      <div class="first">
+        <p style="z-index: 100;">
+            “ I’ve been interested in coding for a while but never taken the jump, until now. 
+            I couldn’t recommend this course enough. I’m now in the job of my dreams and so 
+    excited about the future. ”
+          </p>
+          
+          <h3 style="z-index: 1;">Tanya Sinclair <small>UX Engineer</small>  </h3>        
+        </div>
+        <div class="tanya">
+          <img src="images/image-tanya.jpg" alt="" style="z-index: -1;">
+          <div class="navigation" >            
+            <div>
+              <a class="prev" onclick="plusSlides(-1)" ><img src="images/icon-prev.svg" alt="" style="z-index: 10; position: relative;"></a>
+              <a class="next" onclick="plusSlides(1)" ><img src="images/icon-next.svg" alt="" style="z-index: 10; position: absolute;"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="inside">
+        <div class="first">
+           <p style="z-index: 100;">
+            “ If you want to lay the best foundation possible I'd recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer ”
+          </p>
+          
+          <h3 style="z-index: 1;">John Tarkpor<small>Junior Front-end Developer</small>  </h3>        
+        </div>
+        <div class="tanya">
+          <img src="images/image-john.jpg" alt="" style="z-index: -1;">
+          <div class="navigation">
+            <div>
+              <a class="prev" onclick="plusSlides(-1)"><img src="images/icon-prev.svg" alt=""></a>
+              <a class="next" onclick="plusSlides(1)"><img src="images/icon-next.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+<br>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.malikmukhtar.com">Malik Mukhtar</a>.
+  </div>
+
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("inside");
+      
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      
+      slides[slideIndex-1].style.display = "flex";  
+      
+    }
+    </script>
+</body>
+</html>
